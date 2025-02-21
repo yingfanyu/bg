@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>机械制造助理面试测验卷</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    .timer {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      background-color: #f44336;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .hidden {
+      display: none;
+    }
+    .open-ended {
+      margin-top: 20px;
+    }
+    .open-ended textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    .drawing-feedback, .overall-evaluation {
+      margin-top: 20px;
+    }
+    .drawing-feedback textarea,
+    .overall-evaluation textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    /* PDF/PNG 样式 */
+    .pdf-content {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    .pdf-content h1, .pdf-content h2 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .pdf-content ol {
+      margin-left: 20px;
+    }
+    .pdf-content p {
+      margin: 5px 0;
+    }
+    .pdf-content .section {
+      margin-bottom: 20px;
+    }
+    .pdf-content .answer-key {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>机械制造助理面试测验卷</h1>
+    <div class="timer" id="timer">剩余时间：15:00</div>
+    <button id="startButton" onclick="startQuiz()">开始答题</button>
+
+    <form id="quizForm" class="hidden" onsubmit="return false;">
+      <h2>一、基础知识考察（单选题，共5题，每题2分）</h2>
+      <ol>
+        <li>
+          <p>以下哪一项不属于常见的机械加工工艺？</p>
+          <label><input type="radio" name="q1" value="A"> A. 车削</label>
+          <label><input type="radio" name="q1" value="B"> B. 铣削</label>
+          <label><input type="radio" name="q1" value="C"> C. 焊接</label>
+          <label><input type="radio" name="q1" value="D"> D. 激光切割</label>
+        </li>
+        <li>
+          <p>在机械设计中，公差的主要作用是什么？</p>
+          <label><input type="radio" name="q2" value="A"> A. 提高零件的美观性</label>
+          <label><input type="radio" name="q2" value="B"> B. 确保零件之间的配合精度</label>
+          <label><input type="radio" name="q2" value="C"> C. 减少材料成本</label>
+          <label><input type="radio" name="q2" value="D"> D. 增加零件的重量</label>
+        </li>
+        <li>
+          <p>以下哪种材料最适合用于制造高强度零件？</p>
+          <label><input type="radio" name="q3" value="A"> A. 塑料</label>
+          <label><input type="radio" name="q3" value="B"> B. 铝合金</label>
+          <label><input type="radio" name="q3" value="C"> C. 不锈钢</label>
+          <label><input type="radio" name="q3" value="D"> D. 木材</label>
+        </li>
+        <li>
+          <p>以下哪一项是CAD软件的主要用途？</p>
+          <label><input type="radio" name="q4" value="A"> A. 进行财务分析</label>
+          <label><input type="radio" name="q4" value="B"> B. 绘制机械设计图纸</label>
+          <label><input type="radio" name="q4" value="C"> C. 编写程序代码</label>
+          <label><input type="radio" name="q4" value="D"> D. 制作视频动画</label>
+        </li>
+        <li>
+          <p>在机械设计中，以下哪项不是选择材料时需要考虑的因素？</p>
+          <label><input type="radio" name="q5" value="A"> A. 材料的成本</label>
+          <label><input type="radio" name="q5" value="B"> B. 材料的颜色</label>
+          <label><input type="radio" name="q5" value="C"> C. 材料的强度</label>
+          <label><input type="radio" name="q5" value="D"> D. 材料的耐腐蚀性</label>
+        </li>
+      </ol>
+      <h2>二、学习能力和适应能力（单选题，共5题，每题2分）</h2>
+      <ol start="6">
+        <li>
+          <p>如果你需要学习一项新技能（如SolidWorks），你会优先选择以下哪种方式？</p>
+          <label><input type="radio" name="q6" value="A"> A. 自己摸索</label>
+          <label><input type="radio" name="q6" value="B"> B. 参加培训课程</label>
+          <label><input type="radio" name="q6" value="C"> C. 向同事请教</label>
+          <label><input type="radio" name="q6" value="D"> D. 查阅在线教程</label>
+        </li>
+        <li>
+          <p>当你遇到一个陌生的技术问题时，你通常会采取以下哪种方法解决？</p>
+          <label><input type="radio" name="q7" value="A"> A. 直接放弃</label>
+          <label><input type="radio" name="q7" value="B"> B. 查阅相关资料或手册</label>
+          <label><input type="radio" name="q7" value="C"> C. 向他人求助</label>
+          <label><input type="radio" name="q7" value="D"> D. 尝试随机操作</label>
+        </li>
+        <li>
+          <p>以下哪一项最能体现你的学习能力？</p>
+          <label><input type="radio" name="q8" value="A"> A. 能够快速掌握新知识</label>
+          <label><input type="radio" name="q8" value="B"> B. 对新技术表现出兴趣</label>
+          <label><input type="radio" name="q8" value="C"> C. 能够独立解决问题</label>
+          <label><input type="radio" name="q8" value="D"> D. 以上都是</label>
+        </li>
+        <li>
+          <p>如果公司安排你学习一种新型设备的操作，你会如何开始？</p>
+          <label><input type="radio" name="q9" value="A"> A. 先阅读设备说明书</label>
+          <label><input type="radio" name="q9" value="B"> B. 直接上手操作</label>
+          <label><input type="radio" name="q9" value="C"> C. 观察他人操作后再尝试</label>
+          <label><input type="radio" name="q9" value="D"> D. 请求上级指导</label>
+        </li>
+        <li>
+          <p>以下哪一项是你认为最重要的学习习惯？</p>
+          <label><input type="radio" name="q10" value="A"> A. 定期复习</label>
+          <label><input type="radio" name="q10" value="B"> B. 多做笔记</label>
+          <label><input type="radio" name="q10" value="C"> C. 实践与理论结合</label>
+          <label><input type="radio" name="q10" value="D"> D. 以上都是</label>
+        </li>
+      </ol>
+      <h2>三、逻辑思维和问题解决能力（多选题，共5题，每题4分）</h2>
+      <ol start="11">
+        <li>
+          <p>如果某个零件加工后尺寸不合格，以下哪些措施可能是合理的？（多选）</p>
+          <label><input type="checkbox" name="q11" value="A"> A. 检查加工设备是否校准</label>
+          <label><input type="checkbox" name="q11" value="B"> B. 修改设计图纸</label>
+          <label><input type="checkbox" name="q11" value="C"> C. 更换加工材料</label>
+          <label><input type="checkbox" name="q11" value="D"> D. 重新调整加工参数</label>
+        </li>
+        <li>
+          <p>在生产线上发现效率低下，以下哪些方法可能有助于优化？（多选）</p>
+          <label><input type="checkbox" name="q12" value="A"> A. 增加工人数量</label>
+          <label><input type="checkbox" name="q12" value="B"> B. 改进工艺流程</label>
+          <label><input type="checkbox" name="q12" value="C"> C. 引入自动化设备</label>
+          <label><input type="checkbox" name="q12" value="D"> D. 提高设备维护频率</label>
+        </li>
+        <li>
+          <p>以下哪些因素可能导致机械设备故障？（多选）</p>
+          <label><input type="checkbox" name="q13" value="A"> A. 设备老化</label>
+          <label><input type="checkbox" name="q13" value="B"> B. 操作不当</label>
+          <label><input type="checkbox" name="q13" value="C"> C. 维护不足</label>
+          <label><input type="checkbox" name="q13" value="D"> D. 环境温度过高</label>
+        </li>
+        <li>
+          <p>在解决复杂问题时，以下哪些步骤是必要的？（多选）</p>
+          <label><input type="checkbox" name="q14" value="A"> A. 分析问题原因</label>
+          <label><input type="checkbox" name="q14" value="B"> B. 制定解决方案</label>
+          <label><input type="checkbox" name="q14" value="C"> C. 测试解决方案的有效性</label>
+          <label><input type="checkbox" name="q14" value="D"> D. 总结经验教训</label>
+        </li>
+        <li>
+          <p>以下哪些工具可以帮助你提高问题解决效率？（多选）</p>
+          <label><input type="checkbox" name="q15" value="A"> A. 数据分析软件</label>
+          <label><input type="checkbox" name="q15" value="B"> B. 技术手册</label>
+          <label><input type="checkbox" name="q15" value="C"> C. 团队协作工具</label>
+          <label><input type="checkbox" name="q15" value="D"> D. 个人经验总结</label>
+        </li>
+      </ol>
+      <h2>六、开放性问题（共5题，每题8分）</h2>
+      <div class="open-ended">
+        <label for="q26">26. 你为什么选择机械制造行业？未来有什么职业目标？</label>
+        <textarea id="q26" name="q26"></textarea>
+
+        <label for="q27">27. 如果你被录用，你希望在未来一年内学到哪些技能或经验？</label>
+        <textarea id="q27" name="q27"></textarea>
+
+        <label for="q28">28. 你认为自己最大的优势是什么？如何将这些优势应用到机械制造助理的工作中？</label>
+        <textarea id="q28" name="q28"></textarea>
+
+        <label for="q29">29. 请描述一次你在团队中发挥积极作用的经历。</label>
+        <textarea id="q29" name="q29"></textarea>
+
+        <label for="q30">30. 如果你负责改进一个现有产品的设计，你会从哪些方面入手？</label>
+        <textarea id="q30" name="q30"></textarea>
+      </div>
+      <div class="drawing-feedback hidden">
+        <h2>绘图软件实测反馈区</h2>
+        <textarea id="drawingFeedback" placeholder="面试官填写绘图软件实测反馈"></textarea>
+      </div>
+
+      <div class="overall-evaluation hidden">
+        <h2>面试官整体评价区</h2>
+        <textarea id="evaluation" placeholder="面试官填写整体评价"></textarea>
+      </div>
+
+      <button id="candidateSubmitButton" onclick="submitCandidateAnswers()">考生提交答案</button>
+      <button id="interviewerSubmitButton" onclick="submitInterviewerFeedback()" class="hidden">面试官提交反馈</button>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    let timeLeft = 15 * 60; // 15 minutes in seconds
+    let timerInterval;
+    const timerElement = document.getElementById('timer');
+    const quizForm = document.getElementById('quizForm');
+    const drawingFeedbackSection = document.querySelector('.drawing-feedback');
+    const overallEvaluationSection = document.querySelector('.overall-evaluation');
+    const candidateSubmitButton = document.getElementById('candidateSubmitButton');
+    const interviewerSubmitButton = document.getElementById('interviewerSubmitButton');
+
+    function startQuiz() {
+      document.getElementById('startButton').classList.add('hidden');
+      quizForm.classList.remove('hidden');
+      updateTimer();
+    }
+
+    function updateTimer() {
+      const startTime = new Date().getTime(); // 记录开始时间
+      timerInterval = setInterval(() => {
+        const currentTime = new Date().getTime();
+        timeLeft = Math.max(0, 15 * 60 - Math.floor((currentTime - startTime) / 1000));
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerElement.textContent = `剩余时间：${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          submitCandidateAnswers();
+        }
+      }, 1000);
+    }
+
+    function stopTimer() {
+      clearInterval(timerInterval); // 停止倒计时
+      timerElement.textContent = "考试已结束";
+    }
+
+    function submitCandidateAnswers() {
+      stopTimer(); // 停止倒计时
+      drawingFeedbackSection.classList.remove('hidden');
+      overallEvaluationSection.classList.remove('hidden');
+      candidateSubmitButton.classList.add('hidden'); // 隐藏考生提交按钮
+      interviewerSubmitButton.classList.remove('hidden'); // 显示面试官提交按钮
+      alert('考生已提交答案，请面试官填写反馈！');
+    }
+
+    function submitInterviewerFeedback() {
+      // 获取考生答题时间
+      const totalTime = 15 * 60 - timeLeft;
+      const minutesUsed = Math.floor(totalTime / 60);
+      const secondsUsed = totalTime % 60;
+
+      // 获取面试官输入的内容
+      const drawingFeedback = document.getElementById('drawingFeedback').value;
+      const evaluation = document.getElementById('evaluation').value;
+
+      // 计算单选题得分
+      const singleChoiceQuestions = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10'];
+      let singleChoiceScore = 0;
+      singleChoiceQuestions.forEach(q => {
+        const correctAnswer = getCorrectAnswer(q); // 获取正确答案
+        const userAnswer = getSelectedAnswer(q); // 获取考生答案
+        if (userAnswer === correctAnswer) {
+          singleChoiceScore += 2; // 每题2分
+        }
+      });
+
+      // 计算多选题得分
+      const multipleChoiceQuestions = ['q11', 'q12', 'q13', 'q14', 'q15'];
+      let multipleChoiceScore = 0;
+      multipleChoiceQuestions.forEach(q => {
+        const correctAnswers = getCorrectAnswers(q); // 获取正确答案（数组）
+        const userAnswers = getCheckboxAnswers(q).split(', '); // 获取考生答案（数组）
+        if (arraysEqual(correctAnswers, userAnswers)) {
+          multipleChoiceScore += 4; // 完全正确得4分
+        } else if (userAnswers.some(ans => correctAnswers.includes(ans))) {
+          multipleChoiceScore += 2; // 部分正确得2分
+        }
+      });
+
+      // 总分
+      const totalScore = singleChoiceScore + multipleChoiceScore;
+
+      // 得分汇总HTML
+      const scoreSummary = `
+        <div class="section">
+          <h2>选择题得分汇总</h2>
+          <p><strong>单选题得分：</strong>${singleChoiceScore} 分（共 20 分）</p>
+          <p><strong>多选题得分：</strong>${multipleChoiceScore} 分（共 20 分）</p>
+          <p><strong>总分：</strong>${totalScore} 分（共 40 分）</p>
+        </div>
+      `;
+
+      // 构建PDF内容
+      const pdfContent = `
+        <div class="pdf-content">
+          ${scoreSummary} <!-- 插入得分汇总 -->
+          <h1>机械制造助理面试测验卷</h1>
+          <p><strong>考生答题时间：</strong>${minutesUsed} 分 ${secondsUsed} 秒</p>
+
+          <!-- 基础知识考察 -->
+          <div class="section">
+            <h2>一、基础知识考察（单选题，共5题，每题2分）</h2>
+            <ol>
+              <li>
+                <p><strong>题目1：</strong>以下哪一项不属于常见的机械加工工艺？</p>
+                <p><strong>考生答案：</strong>${getSelectedAnswer('q1')}</p>
+                <p><strong>正确答案：</strong>D. 激光切割</p>
+                <p><strong>解析：</strong>激光切割属于非传统加工工艺，而车削、铣削和焊接是常见的机械加工工艺。</p>
+                <p><strong>评分标准：</strong>答对得2分，答错不得分。</p>
+              </li>
+              <li>
+                <p><strong>题目2：</strong>在机械设计中，公差的主要作用是什么？</p>
+                <p><strong>考生答案：</strong>${getSelectedAnswer('q2')}</p>
+                <p><strong>正确答案：</strong>B. 确保零件之间的配合精度</p>
+                <p><strong>解析：</strong>公差用于控制零件尺寸的偏差范围，以确保零件之间的配合精度。</p>
+                <p><strong>评分标准：</strong>答对得2分，答错不得分。</p>
+              </li>
+              <li>
+                <p><strong>题目3：</strong>以下哪种材料最适合用于制造高强度零件？</p>
+                <p><strong>考生答案：</strong>${getSelectedAnswer('q3')}</p>
+                <p><strong>正确答案：</strong>C. 不锈钢</p>
+                <p><strong>解析：</strong>不锈钢具有高强度和耐腐蚀性，适合制造高强度零件。</p>
+                <p><strong>评分标准：</strong>答对得2分，答错不得分。</p>
+              </li>
+              <li>
+                <p><strong>题目4：</strong>以下哪一项是CAD软件的主要用途？</p>
+                <p><strong>考生答案：</strong>${getSelectedAnswer('q4')}</p>
+                <p><strong>正确答案：</strong>B. 绘制机械设计图纸</p>
+                <p><strong>解析：</strong>CAD软件主要用于绘制机械设计图纸，而不是财务分析或编写代码。</p>
+                <p><strong>评分标准：</strong>答对得2分，答错不得分。</p>
+              </li>
+              <li>
+                <p><strong>题目5：</strong>在机械设计中，以下哪项不是选择材料时需要考虑的因素？</p>
+                <p><strong>考生答案：</strong>${getSelectedAnswer('q5')}</p>
+                <p><strong>正确答案：</strong>B. 材料的颜色</p>
+                <p><strong>解析：</strong>材料的颜色通常不影响其功能性能，因此不作为主要考虑因素。</p>
+                <p><strong>评分标准：</strong>答对得2分，答错不得分。</p>
+              </li>
+            </ol>
+          </div>
+
+          <!-- 学习能力和适应能力 -->
+          <div class="section">
+            <h2>二、学习能力和适应能力（单选题，共5题，每题2分）</h2>
+            <ol start="6">
+              <li>
+                <p><strong>题目6：</strong>如果你需要学习一项新技能（如SolidWorks），你会优先选择以下哪种方式？</p>
+                <p><strong>考生答案：</strong>${getSelectedAnswer('q6')}</p>
+                <p><strong>正确答案：</strong>D. 查阅在线教程</p>
+                <p><strong>解析：</strong>在线教程通常是学习新技能的最佳途径之一，因为它提供了详细的步骤指导和实践案例。</p>
+                <p><strong>评分标准：</strong>答对得2分，答错不得分。</p>
+              </li>
+              <li>
+                <p><strong>题目7：</strong>当你遇到一个陌生的技术问题时，你通常会采取以下哪种方法解决？</p>
+                <p><strong>考生答案：</strong>${getSelectedAnswer('q7')}</p>
+                <p><strong>正确答案：</strong>B. 查阅相关资料或手册</p>
+                <p><strong>解析：</strong>查阅相关资料或手册可以帮助快速找到解决方案，是一种高效的方法。</p>
+                <p><strong>评分标准：</strong>答对得2分，答错不得分。</p>
+              </li>
+              <li>
+                <p><strong>题目8：</strong>以下哪一项最能体现你的学习能力？</p>
+                <p><strong>考生答案：</strong>${getSelectedAnswer('q8')}</p>
+                <p><strong>正确答案：</strong>D. 以上都是</p>
+                <p><strong>解析：</strong>学习能力体现在快速掌握新知识、对新技术表现出兴趣以及能够独立解决问题等多个方面。</p>
+                <p><strong>评分标准：</strong>答对得2分，答错不得分。</p>
+              </li>
+              <li>
+                <p><strong>题目9：</strong>如果公司安排你学习一种新型设备的操作，你会如何开始？</p>
+                <p><strong>考生答案：</strong>${getSelectedAnswer('q9')}</p>
+                <p><strong>正确答案：</strong>A. 先阅读设备说明书</p>
+                <p><strong>解析：</strong>阅读设备说明书是最基础且有效的方式，可以快速了解设备的功能和操作方法。</p>
+                <p><strong>评分标准：</strong>答对得2分，答错不得分。</p>
+              </li>
+              <li>
+                <p><strong>题目10：</strong>以下哪一项是你认为最重要的学习习惯？</p>
+                <p><strong>考生答案：</strong>${getSelectedAnswer('q10')}</p>
+                <p><strong>正确答案：</strong>D. 以上都是</p>
+                <p><strong>解析：</strong>定期复习、多做笔记以及实践与理论结合都是重要的学习习惯。</p>
+                <p><strong>评分标准：</strong>答对得2分，答错不得分。</p>
+              </li>
+            </ol>
+          </div>
+
+          <!-- 逻辑思维和问题解决能力 -->
+          <div class="section">
+            <h2>三、逻辑思维和问题解决能力（多选题，共5题，每题4分）</h2>
+            <ol start="11">
+              <li>
+                <p><strong>题目11：</strong>如果某个零件加工后尺寸不合格，以下哪些措施可能是合理的？（多选）</p>
+                <p><strong>考生答案：</strong>${getCheckboxAnswers('q11')}</p>
+                <p><strong>正确答案：</strong>A. 检查加工设备是否校准, C. 更换加工材料, D. 重新调整加工参数</p>
+                <p><strong>解析：</strong>检查设备校准、更换材料和调整加工参数都可以解决尺寸不合格的问题，而修改设计图纸通常不是直接的解决方法。</p>
+                <p><strong>评分标准：</strong>全部答对得4分，部分答对得2分，完全错误不得分。</p>
+              </li>
+              <li>
+                <p><strong>题目12：</strong>在生产线上发现效率低下，以下哪些方法可能有助于优化？（多选）</p>
+                <p><strong>考生答案：</strong>${getCheckboxAnswers('q12')}</p>
+                <p><strong>正确答案：</strong>B. 改进工艺流程, C. 引入自动化设备, D. 提高设备维护频率</p>
+                <p><strong>解析：</strong>改进工艺流程、引入自动化设备和提高设备维护频率可以提升生产线效率，而单纯增加工人数量未必有效。</p>
+                <p><strong>评分标准：</strong>全部答对得4分，部分答对得2分，完全错误不得分。</p>
+              </li>
+              <li>
+                <p><strong>题目13：</strong>以下哪些因素可能导致机械设备故障？（多选）</p>
+                <p><strong>考生答案：</strong>${getCheckboxAnswers('q13')}</p>
+                <p><strong>正确答案：</strong>A. 设备老化, B. 操作不当, C. 维护不足, D. 环境温度过高</p>
+                <p><strong>解析：</strong>设备老化、操作不当、维护不足以及环境温度过高都可能导致机械设备故障。</p>
+                <p><strong>评分标准：</strong>全部答对得4分，部分答对得2分，完全错误不得分。</p>
+              </li>
+              <li>
+                <p><strong>题目14：</strong>在解决复杂问题时，以下哪些步骤是必要的？（多选）</p>
+                <p><strong>考生答案：</strong>${getCheckboxAnswers('q14')}</p>
+                <p><strong>正确答案：</strong>A. 分析问题原因, B. 制定解决方案, C. 测试解决方案的有效性, D. 总结经验教训</p>
+                <p><strong>解析：</strong>分析原因、制定方案、测试有效性以及总结经验是解决复杂问题的关键步骤。</p>
+                <p><strong>评分标准：</strong>全部答对得4分，部分答对得2分，完全错误不得分。</p>
+              </li>
+              <li>
+                <p><strong>题目15：</strong>以下哪些工具可以帮助你提高问题解决效率？（多选）</p>
+                <p><strong>考生答案：</strong>${getCheckboxAnswers('q15')}</p>
+                <p><strong>正确答案：</strong>A. 数据分析软件, B. 技术手册, C. 团队协作工具, D. 个人经验总结</p>
+                <p><strong>解析：</strong>数据分析软件、技术手册、团队协作工具和个人经验总结都能有效提高问题解决效率。</p>
+                <p><strong>评分标准：</strong>全部答对得4分，部分答对得2分，完全错误不得分。</p>
+              </li>
+            </ol>
+          </div>
+
+          <!-- 开放性问题 -->
+          <div class="section">
+            <h2>六、开放性问题（共5题，每题8分）</h2>
+            <ol start="26">
+              <li>
+                <p><strong>题目26：</strong>你为什么选择机械制造行业？未来有什么职业目标？</p>
+                <p><strong>考生答案：</strong>${document.getElementById('q26').value}</p>
+              </li>
+              <li>
+                <p><strong>题目27：</strong>如果你被录用，你希望在未来一年内学到哪些技能或经验？</p>
+                <p><strong>考生答案：</strong>${document.getElementById('q27').value}</p>
+              </li>
+              <li>
+                <p><strong>题目28：</strong>你认为自己最大的优势是什么？如何将这些优势应用到机械制造助理的工作中？</p>
+                <p><strong>考生答案：</strong>${document.getElementById('q28').value}</p>
+              </li>
+              <li>
+                <p><strong>题目29：</strong>请描述一次你在团队中发挥积极作用的经历。</p>
+                <p><strong>考生答案：</strong>${document.getElementById('q29').value}</p>
+              </li>
+              <li>
+                <p><strong>题目30：</strong>如果你负责改进一个现有产品的设计，你会从哪些方面入手？</p>
+                <p><strong>考生答案：</strong>${document.getElementById('q30').value}</p>
+              </li>
+            </ol>
+          </div>
+
+          <!-- 绘图反馈区 -->
+          <div class="section">
+            <h2>绘图软件实测反馈区</h2>
+            <p><strong>面试官反馈：</strong>${drawingFeedback}</p>
+          </div>
+
+          <!-- 面试官整体评价区 -->
+          <div class="section">
+            <h2>面试官整体评价区</h2>
+            <p><strong>面试官评价：</strong>${evaluation}</p>
+          </div>
+        </div>
+      `;
+
+      // 将PDF内容插入到页面中并导出PNG
+      const tempDiv = document.createElement('div');
+      tempDiv.style.position = 'absolute'; // 确保内容不可见
+      tempDiv.style.left = '-9999px';
+      tempDiv.innerHTML = pdfContent;
+      document.body.appendChild(tempDiv);
+
+      html2canvas(tempDiv, {
+        scale: 2, // 提高分辨率
+        scrollY: 0, // 确保滚动位置正确
+        useCORS: true // 支持跨域图片
+      }).then(canvas => {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = '机械制造助理面试测验卷.png';
+        link.click();
+        tempDiv.remove(); // 清理临时元素
+        alert('面试官反馈已提交并导出PNG！');
+      });
+    }
+
+    // 获取单选题答案
+    function getSelectedAnswer(name) {
+      const selected = document.querySelector(`input[name="${name}"]:checked`);
+      return selected ? selected.value : '未作答';
+    }
+
+    // 获取多选题答案
+    function getCheckboxAnswers(name) {
+      const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+      if (checkboxes.length === 0) return '未作答';
+      return Array.from(checkboxes).map(cb => cb.value).join(', ');
+    }
+
+    // 获取单选题的正确答案
+    function getCorrectAnswer(questionName) {
+      const correctAnswers = {
+        q1: 'D',
+        q2: 'B',
+        q3: 'C',
+        q4: 'B',
+        q5: 'B',
+        q6: 'D',
+        q7: 'B',
+        q8: 'D',
+        q9: 'A',
+        q10: 'D'
+      };
+      return correctAnswers[questionName] || '';
+    }
+
+    // 获取多选题的正确答案（返回数组）
+    function getCorrectAnswers(questionName) {
+      const correctAnswers = {
+        q11: ['A', 'C', 'D'],
+        q12: ['B', 'C', 'D'],
+        q13: ['A', 'B', 'C', 'D'],
+        q14: ['A', 'B', 'C', 'D'],
+        q15: ['A', 'B', 'C', 'D']
+      };
+      return correctAnswers[questionName] || [];
+    }
+
+    // 比较两个数组是否相等
+    function arraysEqual(arr1, arr2) {
+      if (arr1.length !== arr2.length) return false;
+      return arr1.every(item => arr2.includes(item));
+    }
+  </script>
+</body>
+</html>
